@@ -3,25 +3,168 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-.fullscreen-image {
-    width: 100%;
-    height: 100%;
+/* --- Estilos de la Home (simulación de la imagen) --- */
+
+.home-container {
+    padding: 20px;
+    background-color: #f0f0f0; /* Color de fondo general */
+    /* La imagen de fondo se puede añadir aquí si es necesario */
+}
+
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #000; /* Fondo negro opcional mientras carga la imagen */
+    padding: 10px 40px;
+    background-color: white; /* Fondo blanco de la barra de navegación */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.fullscreen-image img {
+.logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 30px; /* Tamaño del logo (simulado) */
+    margin-right: 8px;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.cta-button {
+    background-color: #007bff; /* Azul de botón */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.user-name {
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #007bff; /* Color del nombre de usuario */
+}
+
+/* Simulación de contenido hero */
+.hero-content {
+    margin-top: 50px;
+    padding: 50px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+}
+.explorar-button {
+    background-color: white;
+    color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+/* --- Estilos del Modal de Login --- */
+
+/* Contenedor del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 10; 
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene la imagen ajustada al tamaño de la pantalla */
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+    padding-top: 60px;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Centrado vertical y horizontalmente */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho preferido */
+    max-width: 400px; /* Ancho máximo */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cerrar */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos de formulario */
+#login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+#login-form .cta-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
 }
