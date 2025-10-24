@@ -1,2 +1,2 @@
-# learnext-v3
-prueba
+# LEARNEXT Front
+Sitio web responsivo base para LEARNEXT.
