@@ -2,13 +2,13 @@
   position: relative;
   width: 100%;
   height: 100vh; /* Full screen */
-  background-image: url('assets/hero-desktop.png'); /* Ruta exacta */
-  background-size: cover; /* Para que ocupe todo el hero */
-  background-position: center; /* Centrado */
+  background-image: url('../assets/hero-desktop.png'); /* <-- ruta correcta */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center; /* Centrar login horizontal */
-  align-items: center;     /* Centrar login vertical */
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-copy {
