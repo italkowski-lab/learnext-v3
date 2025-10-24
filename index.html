@@ -9,27 +9,32 @@
 <body>
     
     <div class="home-container" id="home-container">
-        <header class="navbar">
-            <div class="logo">
-                <img src="assets/e-learnext-logo.png" alt="LEARNEXT Logo">
-                LEARNEXT
-            </div>
-            <nav class="nav-links">
-                <a href="#">Áreas</a>
-                <a href="#">Ecosistema</a>
-                <a href="#">Ministerio</a>
-            </nav>
-            <button id="login-button" class="cta-button">Ingresar</button>
-            <span id="user-display" class="user-name" style="display:none;"></span>
-        </header>
-
-        <main class="hero-content">
-            <h1>El Ecosistema del Futuro Educativo</h1>
-            <p>Impulsa tu potencial y alcanza el éxito en tu carrera con nuestra plataforma de aprendizaje</p>
-            <button class="explorar-button">Explorá tu camino</button>
-        </main>
         
-        </div>
+        <div class="content-overlay">
+            
+            <header class="navbar">
+                <div class="logo">
+                    LEARNEXT
+                </div>
+                <nav class="nav-links">
+                    <a href="#">Áreas</a>
+                    <a href="#">Ecosistema</a>
+                    <a href="#">Ministerio</a>
+                </nav>
+                <button id="login-button" class="cta-button">Ingresar</button>
+                <span id="user-display" class="user-name" style="display:none;"></span>
+            </header>
+
+            <main class="hero-content">
+                <div class="text-box">
+                    <h1>El Ecosistema del Futuro Educativo</h1>
+                    <p>Impulsa tu potencial y alcanza el éxito en tu carrera con nuestra plataforma de aprendizaje</p>
+                    <button class="explorar-button">Explorá tu camino</button>
+                </div>
+            </main>
+            
+            </div>
+    </div>
 
     <div id="login-modal" class="modal">
         <div class="modal-content">
@@ -57,9 +62,7 @@
             { username: 'mentor', email: 'mentor@learnext.com', password: 'mentor1', name: 'María García' },
             { username: 'admin', email: 'admin@learnext.com', password: 'admin', name: 'Admin Learnext' }
         ];
-    </script>
 
-    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const loginButton = document.getElementById('login-button');
             const userDisplay = document.getElementById('user-display');
@@ -68,69 +71,58 @@
             const loginForm = document.getElementById('login-form');
             const loginError = document.getElementById('login-error');
 
-            // Función para mostrar el modal
+            // Mostrar modal
             loginButton.onclick = function() {
                 modal.style.display = 'block';
-                loginError.style.display = 'none'; // Ocultar errores previos
-                loginForm.reset(); // Limpiar el formulario
+                loginError.style.display = 'none';
+                loginForm.reset();
             };
 
-            // Función para ocultar el modal
+            // Ocultar modal
             closeButton.onclick = function() {
                 modal.style.display = 'none';
             };
 
-            // Ocultar modal al hacer clic fuera de él
+            // Ocultar modal al hacer clic fuera
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = 'none';
                 }
             };
 
-            // Lógica de validación del formulario
+            // Lógica de login
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
                 const usernameInput = document.getElementById('username-input').value.trim();
                 const passwordInput = document.getElementById('password-input').value.trim();
                 
-                // Buscar usuario por username O email
                 const user = USERS.find(u => 
                     (u.username === usernameInput || u.email === usernameInput) && u.password === passwordInput
                 );
 
                 if (user) {
-                    // **LOGIN EXITOSO**
-                    modal.style.display = 'none'; // Ocultar modal
-                    
-                    // Almacenar el nombre de usuario (simulación de sesión)
                     localStorage.setItem('currentUser', user.name); 
-
-                    // Recargar la página para aplicar los cambios (simulando recarga de Home)
                     window.location.reload(); 
                 } else {
-                    // **LOGIN FALLIDO**
                     loginError.style.display = 'block';
                 }
             });
 
-            // Función para verificar la sesión al cargar la página
+            // Verificar la sesión al cargar la página
             function checkLoginStatus() {
                 const userName = localStorage.getItem('currentUser');
                 
                 if (userName) {
-                    // Usuario logueado
                     loginButton.style.display = 'none';
                     userDisplay.textContent = userName;
                     userDisplay.style.display = 'inline-block';
                 } else {
-                    // Usuario no logueado
                     loginButton.style.display = 'inline-block';
                     userDisplay.style.display = 'none';
                 }
             }
 
-            // Ejecutar la verificación al cargar el script
             checkLoginStatus();
         });
     </script>
