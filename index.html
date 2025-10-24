@@ -10,6 +10,8 @@
     
     <div class="home-container" id="home-container">
         
+        <img src="assets/hero-desktop_v2.png" alt="Ecosistema Educativo" class="background-image">
+        
         <div class="content-overlay">
             
             <header class="navbar">
@@ -32,8 +34,7 @@
                     <button class="explorar-button">Explorá tu camino</button>
                 </div>
             </main>
-            
-            </div>
+        </div>
     </div>
 
     <div id="login-modal" class="modal">
@@ -71,26 +72,22 @@
             const loginForm = document.getElementById('login-form');
             const loginError = document.getElementById('login-error');
 
-            // Mostrar modal
             loginButton.onclick = function() {
                 modal.style.display = 'block';
                 loginError.style.display = 'none';
                 loginForm.reset();
             };
 
-            // Ocultar modal
             closeButton.onclick = function() {
                 modal.style.display = 'none';
             };
 
-            // Ocultar modal al hacer clic fuera
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = 'none';
                 }
             };
 
-            // Lógica de login
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
@@ -109,7 +106,6 @@
                 }
             });
 
-            // Verificar la sesión al cargar la página
             function checkLoginStatus() {
                 const userName = localStorage.getItem('currentUser');
                 
