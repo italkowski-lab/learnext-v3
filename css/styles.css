@@ -16,7 +16,7 @@ html, body {
 
 .home-container {
     /* Utiliza la imagen como fondo */
-    background-image: url('assets/hero-desktop_v2.jpg'); /* ASEGÚRATE DE QUE ESTA RUTA SEA CORRECTA */
+    background-image: url('assets/hero-desktop_v2.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
