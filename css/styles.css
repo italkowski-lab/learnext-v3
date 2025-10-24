@@ -2,27 +2,16 @@
   position: relative;
   width: 100%;
   height: 100vh; /* Full screen */
-  overflow: hidden; /* Para que no se salga nada */
-}
-
-.hero-media {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('assets/hero-desktop.png');
-  background-size: cover;
-  background-position: center;
+  background-image: url('assets/hero-desktop.png'); /* Ruta exacta */
+  background-size: cover; /* Para que ocupe todo el hero */
+  background-position: center; /* Centrado */
   background-repeat: no-repeat;
-  z-index: 1;
+  display: flex;
+  justify-content: center; /* Centrar login horizontal */
+  align-items: center;     /* Centrar login vertical */
 }
 
 .hero-copy {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
 }
