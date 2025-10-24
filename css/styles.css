@@ -12,6 +12,10 @@
 }
 
 .hero-copy {
+  position: absolute;
+  /* Ajusta estos valores para que el botón quede exactamente sobre "Crear una cuenta" */
+  top: 65%;     /* distancia desde arriba del hero */
+  left: 50%;    /* centrado horizontal */
+  transform: translate(-50%, -50%);
   z-index: 2;
-  text-align: center;
 }
